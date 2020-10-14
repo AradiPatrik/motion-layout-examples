@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_key_frames_scene">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/cat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cat" />
+
+    <ImageView
+        android:id="@+id/infoIconBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_circle"
+        app:layout_constraintBottom_toBottomOf="@id/infoIcon"
+        app:layout_constraintEnd_toEndOf="@id/infoIcon"
+        app:layout_constraintStart_toStartOf="@id/infoIcon"
+        app:layout_constraintTop_toTopOf="@id/infoIcon"
+        app:tint="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/infoIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_baseline_info_24"
+        app:layout_constraintBottom_toBottomOf="@id/cat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="#5588AA" />
+
+    <ImageView
+        android:id="@+id/chevron"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/cheveron"
+        app:layout_constraintBottom_toBottomOf="@id/infoIcon"
+        app:layout_constraintEnd_toStartOf="@+id/infoIcon"
+        app:layout_constraintTop_toTopOf="@id/infoIcon"
+        app:tint="#ffffff" />
+
+    <TextView
+        android:id="@+id/information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cat"
+        android:paddingTop="16dp"
+        style="?attr/textAppearanceBody1"/>
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et augue ipsum. Nunc at sapien mauris. Nam nulla enim, pretium in condimentum nec, semper at mi. Fusce in orci fermentum ante semper dignissim. Mauris a turpis quis magna auctor tincidunt. Phasellus leo lacus, porttitor non tellus ut, ultricies scelerisque lorem. Pellentesque sed enim nisi. Ut dignissim scelerisque orci, vitae varius ipsum gravida ac."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/information"
+        android:padding="16dp"
+        style="?attr/textAppearanceBody2"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

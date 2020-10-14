@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@id/open"
+        motion:constraintSetStart="@id/closed_front"
+        motion:duration="1000">
+
+        <OnSwipe
+            motion:dragDirection="dragLeft"
+            motion:touchRegionId="@+id/front_cover" />
+
+        <KeyFrameSet>
+            <KeyTrigger motion:motionTarget="@id/front_cover"
+                motion:framePosition="50"
+                motion:onCross="toggle" />
+        </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@id/closed_back"
+        motion:constraintSetStart="@id/open"
+        motion:duration="1000">
+
+        <OnSwipe
+            motion:dragDirection="dragLeft"
+            motion:touchRegionId="@+id/front_cover" />
+
+        <KeyFrameSet>
+            <KeyTrigger motion:motionTarget="@id/back_cover"
+                motion:framePosition="50"
+                motion:onCross="toggle" />
+        </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@id/closed_back_envelope"
+        motion:constraintSetStart="@id/closed_back"
+        motion:duration="1000">
+        <OnSwipe
+            motion:dragDirection="dragLeft"
+            motion:touchRegionId="@+id/front_cover" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/closed_front">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/open">
+        <Constraint android:id="@+id/front_cover">
+            <Transform
+                android:rotationY="-180"
+                android:translationX="100dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/back_cover">
+            <Transform android:translationX="100dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/closed_back">
+        <Constraint android:id="@+id/front_cover">
+            <Transform
+                android:rotationY="-180"
+                android:translationX="@dimen/image_width" />
+        </Constraint>
+
+        <Constraint android:id="@+id/back_cover">
+            <Transform
+                android:rotationY="-180"
+                android:translationX="@dimen/image_width"
+                android:translationZ="5dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/closed_back_envelope"
+        motion:deriveConstraintsFrom="@id/closed_back">
+        <Constraint
+            android:id="@+id/envelope"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>
