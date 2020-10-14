@@ -14,8 +14,6 @@ class FoldedCardActivity : AppCompatActivity() {
             cameraDistance = 6000 * resources.displayMetrics.density
         }
         findViewById<View>(R.id.back_cover).cameraDistance = 6000 * resources.displayMetrics.density
-        findViewById<View>(R.id.front_cover).pivotY = 1.0f
-        findViewById<View>(R.id.back_cover).pivotY = 1.0f
 
     }
 }

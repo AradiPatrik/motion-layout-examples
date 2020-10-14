@@ -15,15 +15,15 @@
         <KeyFrameSet>
             <KeyPosition motion:motionTarget="@id/chevron"
                 motion:framePosition="30"
-                motion:percentX="-0.743"
-                motion:percentY="0.55" />
+                motion:percentX="-0.876"
+                motion:percentY="0.516" />
 
             <KeyPosition
                 motion:motionTarget="@+id/chevron"
                 motion:framePosition="66"
                 motion:keyPositionType="deltaRelative"
-                motion:percentX="0.029"
-                motion:percentY="0.819" />
+                motion:percentX="-0.048"
+                motion:percentY="0.831" />
         </KeyFrameSet>
     </Transition>
 
